@@ -8,7 +8,7 @@ public partial class AreaCirculoView : ContentPage
 	AreaCirculoViewModel viewModel; 
 	public AreaCirculoView()
 	{
-		InitializeComponent();
+		InitializeComponent(); 
 		viewModel = new AreaCirculoViewModel();
 		BindingContext = viewModel; 
 	}

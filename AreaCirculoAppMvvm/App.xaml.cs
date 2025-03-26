@@ -7,7 +7,6 @@ namespace AreaCirculoAppMvvm
         public App()
         {
             InitializeComponent();
-
             MainPage = new AreaCirculoView();
         }
     }

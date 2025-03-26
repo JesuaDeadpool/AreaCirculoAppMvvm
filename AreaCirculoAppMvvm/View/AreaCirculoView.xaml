@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AreaCirculoAppMvvm.View.AreaCirculoView"
-             
+             xmlns:viewModel="clr-namespace:AreaCirculoAppMvvm.ViewModel"
+             x:DataType="viewModel:AreaCirculoViewModel">
+
     <VerticalStackLayout Spacing="15" Padding="20">
         <Label 
             Text="Area Del Circulo"
@@ -10,15 +12,15 @@
             HorizontalOptions="Center" FontSize="30" FontAttributes="Bold" />
 
     <Label Text="Ingrese el Radio" FontSize="18" FontAttributes="Bold"/>
-    <Entry Text="" Keyboard="Numeric"/>
+    <Entry Text="{Binding Radio}" Keyboard="Numeric"/>
 
     <Label Text="Area del circulo : " FontSize="18" FontAttributes="Bold"/>
-    <Entry Text="" Keyboard="Numeric" IsReadOnly="True" />
+    <Entry Text="{Binding Area}" Keyboard="Numeric" IsReadOnly="True" />
 
 
-    <Grid RowDefinitions="*" ColumnDefinitions="*,*">
-        <Button Text="Calcular" FontSize="18" FontAttributes="Bold" Background="CadetBlue" Grid.Column="0"/>
-        <Button Text="Limpiar" FontSize="18" FontAttributes="Bold" Background="DarkRed" Grid.Column="1"/>
+    <Grid RowDefinitions="*" ColumnDefinitions="*,*" ColumnSpacing="15">
+        <Button Text="Calcular" FontSize="18" FontAttributes="Bold" Background="CadetBlue" Grid.Column="0" TextColor="White" x:Name="BtnCalcular" Command="{Binding CalcularCommand}"/>
+        <Button Text="Limpiar" FontSize="18" FontAttributes="Bold" Background="DarkRed" Grid.Column="1" TextColor="White" x:Name="BtnLimpiar" Command="{Binding LimpiarCommand}"/>
     </Grid>
 
 
